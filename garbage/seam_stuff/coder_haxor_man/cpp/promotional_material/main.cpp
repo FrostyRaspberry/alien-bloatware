@@ -19,14 +19,14 @@ int main(void)
   int m;
   
   while(true) {
-    Sleep((rand() % 60 + 60) * 1000);
-
     m = rand() % length;
     
     MessageBox(NULL,
 	       messages[m],
 	       title,
 	       MB_OK);
+
+    Sleep((rand() % 60 + 60) * 1000);
   }
 
   return 0;

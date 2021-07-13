@@ -1,16 +1,16 @@
 SHELL = /bin/sh
 
 CXX = x86_64-w64-mingw32-g++
-CXXFLAGS = -Wpedantic -Wall -Wextra -O2
-LDFLAGS =
+CXXFLAGS = -Wpedantic -Wall -Wextra -g
+LDFLAGS = -mwindows
 
-all : a.exe
+all : promo_mat.exe
 
-a.exe : main.o
+promo_mat.exe : main.o
 	$(CXX) -o $@ $^ $(LDFLAGS)
 
 main.o : main.cpp
 	$(CXX) $(CXXFLAGS) -c $^
 
 clean :
-	rm -fv main.o a.exe
+	rm -fv main.o promo_mat.exe
